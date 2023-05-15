@@ -1,2 +1,23 @@
 *.pth.tar
 __pycache__/
+
+
+
+# demo stuff
+vocaset/FLAME_sample.ply
+vocaset/templates/
+vocaset/vocaset.pth
+vocaset/FLAME_sample.zip
+vocaset/data_verts.npy
+vocaset/raw_audio_fixed.pkl
+vocaset/subj_seq_to_idx.pkl
+vocaset/templates.pkl
+vocaset/vertices_npy/
+vocaset/wav/
+
+# demo outputs
+demo/output/
+
+# random
+=4.3
+=8.3.2

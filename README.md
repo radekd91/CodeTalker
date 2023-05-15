@@ -17,6 +17,16 @@ Official PyTorch implementation for the paper:
 ## **Changelog**
 - 2023.04.03 Release code and model weights!
 
+## **Kiran Setup**
+1. python 3.7.16
+2. pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html --no-cache-dir
+3. !pip install git+https://github.com/MPI-IS/mesh.git
+4. pip install -r requirements.txt (modify pickle5)
+5. use uncorrupted FLAME_samply.ply
+6. download pretrained models and vocaset dataset
+7. update pyrender: conda install -c conda-forge pyrender
+8. main/CT_export_obj.py --config config/vocaset/demo.yaml
+
 ## **TODO**
 
 - [ ] Provide online demo.

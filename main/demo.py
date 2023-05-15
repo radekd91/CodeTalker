@@ -19,6 +19,8 @@ cfg = get_parser()
 import tempfile
 from subprocess import call
 os.environ['PYOPENGL_PLATFORM'] = 'osmesa' #egl
+# if 'DISPLAY' not in os.environ or os.environ['DISPLAY'] == '':
+#     os.environ['PYOPENGL_PLATFORM'] = 'egl'
 import pyrender
 import trimesh
 from psbody.mesh import Mesh
@@ -173,13 +175,14 @@ def test(model, wav_file, save_folder, condition, subject):
     ######################################################################################
     ##### render the npy file
 
+    cfg.data_root = "/is/cluster/scratch/kchhatre/Work/ENSPARC/baselines/CodeTalker/vocaset"
     if cfg.dataset == "BIWI":
         template_file = os.path.join(cfg.data_root, "BIWI.ply")
     elif cfg.dataset == "vocaset":
         template_file = os.path.join(cfg.data_root, "FLAME_sample.ply")
          
     print("rendering: ", test_name)
-                 
+    print("template_file: ", template_file)           
     template = Mesh(filename=template_file)
     predicted_vertices = np.load(predicted_vertices_path)
     predicted_vertices = np.reshape(predicted_vertices,(-1,cfg.vertice_dim//3,3))
